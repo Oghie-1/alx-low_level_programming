@@ -8,12 +8,14 @@
  */
 int main(void)
 {
-	char lowerCase;
+	char letters[] = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ";
+	int i;
 
-	for (lowerCase = 'a'; lowerCase <= 'z'; lowerCase++)
+	for (i = 0; i <= 51; i++)
 	{
-		putchar(lowerCase);
+		putchar(letters[i]);
 	}
 	putchar('\n');
 	return (0);
 }
+
