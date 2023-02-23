@@ -1,4 +1,3 @@
-#include "main.h"
 #include <stdio.h>
 
 /**
@@ -6,22 +5,20 @@
  *
  * Return: Always 0.
  */
+
 int main(void)
 {
-    unsigned long int fib1 = 1, fib2 = 2, fib_sum;
-    int count;
+    int i;
+    unsigned long long int a = 1, b = 2, c;
 
-    printf("%lu, %lu", fib1, fib2);
-
-    for (count = 3; count <= 98; count++)
+    printf("%llu, %llu", a, b);
+    for (i = 2; i < 98; i++)
     {
-        fib_sum = fib1 + fib2;
-        printf(", %lu", fib_sum);
-        fib1 = fib2;
-        fib2 = fib_sum;
+        c = a + b;
+        printf(", %llu", c);
+        a = b;
+        b = c;
     }
-
     printf("\n");
-
     return (0);
 }
