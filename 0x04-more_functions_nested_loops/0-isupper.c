@@ -1,18 +1,18 @@
-#include "main.h"
-#include <stdio.h>
-
+#include main.h"
 /**
-   * main - check the code for Holberton School students.
-    *
-     * Return: Always 0.
-      */
-int main(void)
-{
-	    char c;
+ * _isupper - checks for uppercase character
+ *@c: int
+ *Return: 1 if upper, 0 other
+ */
 
-	        c = 'A';
-		    printf("%c: %d\n", c, _isupper(c));
-		        c = 'a';
-			    printf("%c: %d\n", c, _isupper(c));
-			        return (0);
+int _isupper(int c)
+{
+char alpha;
+for (alpha = 'A'; alpha <= 'Z'; alpha++)
+{
+	if (c == alpha)
+		return (1);
+}
+
+return (0);
 }
