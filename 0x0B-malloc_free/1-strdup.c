@@ -1,64 +1,68 @@
 #include "main.h"
-/**
- * _strlen - count array
- * @s: array of elements
- * Return: 1
- */
-
-int _strlen(char*s)
-{
-unsigned int i = 0;
-
-while (s[i] != '\0') /*count character of string*/
-{
-i++;
-}
-return i;
-}
 
 /**
- * _strcpy - copy arrays
- * @src: array of elements
- * @dest: dest array
- * Return: dest
+ * _strlen - counts the length of a string
+ * @s: input string
+ * Return: length of the string
  */
-
-char *_strcpy(char*dest, char*src)
+int _strlen(char *s)
 {
-int i = 0;
+    int len = 0;
 
-while (src[i] != '\0')
-{
-dest[i] = '\0';
-i++;
-}
-dest[i] = '\0';
+    while (*s != '\0')
+    {
+        len++;
+        s++;
+    }
 
-return (dest);
+    return (len);
 }
 
 /**
- * _strdup - array for prints a string
- * * _strcpy - copy arrays
- * @str: array of elements
- * Return: pointer
+ * _strcpy - copies a string
+ * @dest: destination string
+ * @src: source string
+ * Return: pointer to the destination string
  */
+char *_strcpy(char *dest, char *src)
+{
+    int i;
 
-char *_strdup(char*str)
-{
-char *dst;
-int len;
+    for (i = 0; src[i] != '\0'; i++)
+    {
+        dest[i] = src[i];
+    }
+    dest[i] = '\0';
 
-if (str == 0)
+    return (dest);
+}
+
+/**
+ * _strdup - duplicates a string
+ * @str: string to be duplicated
+ * Return: pointer to the newly allocated memory containing the duplicate string
+ */
+char *_strdup(char *str)
 {
-return (NULL);
+    char *new_str;
+    int len;
+
+    if (str == NULL)
+    {
+        return (NULL);
+    }
+
+    len = _strlen(str);
+
+    new_str = malloc(sizeof(char) * (len + 1));
+
+    if (new_str == NULL)
+    {
+        return (NULL);
+    }
+
+    _strcpy(new_str, str);
+
+    return (new_str);
 }
-len = _strlen(str);
-dst = malloc(sizeof(char) * (len + 1));
-if (dst == NULL)
-{
-return(NULL);
-}
-_strcpy(dst, str);
-return (dst);
-}
+
