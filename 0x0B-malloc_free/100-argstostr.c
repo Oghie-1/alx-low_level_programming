@@ -14,7 +14,7 @@ char *str;
 int i, j, k = 0, len = 0;
 if (ac == 0 || av == NULL)
 return (NULL);
-/* calculate length of concatenated string */   
+/* calculate length of concatenated string */  
 for (i = 0; i < ac; i++)
 {
 for (j = 0; av[i][j] != '\0'; j++)
@@ -23,7 +23,7 @@ len++; /* account for space after each argument */
 }
 len++; /* account for terminating null byte */
 /* allocate memory for concatenated string */
-str = malloc(len * sizeof(char));
+str = malloc(len *sizeof(char));
 if (str == NULL)
 return (NULL);
 /* concatenate arguments */
