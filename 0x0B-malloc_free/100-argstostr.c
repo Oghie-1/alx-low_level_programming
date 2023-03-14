@@ -1,42 +1,37 @@
 #include "main.h"
-#include <stdio.h>
 #include <stdlib.h>
 /**
- * argstostr - concatenates all arguments of the program
- * @ac: argument count
- * @av: argument vector
- *
- * Return: pointer to concatenated string
- */
+* argstostr - main entry
+* @ac: int input
+* @av: double pointer array
+* Return: 0
+*/
 char *argstostr(int ac, char **av)
 {
+int i, n, r = 0, l = 0;
 char *str;
-int i, j, k = 0, len = 0;
 if (ac == 0 || av == NULL)
 return (NULL);
-/* calculate length of concatenated string */  
 for (i = 0; i < ac; i++)
 {
-for (j = 0; av[i][j] != '\0'; j++)
-len++;
-len++; /* account for space after each argument */
+for (n = 0; av[i][n]; n++)
+l++;
 }
-len++; /* account for terminating null byte */
-/* allocate memory for concatenated string */
-str = malloc(len *sizeof(char));
+l += ac;
+str = malloc(sizeof(char) * l + 1);
 if (str == NULL)
 return (NULL);
-/* concatenate arguments */
 for (i = 0; i < ac; i++)
 {
-for (j = 0; av[i][j] != '\0'; j++)
+for (n = 0; av[i][n]; n++)
 {
-str[k] = av[i][j];
-k++;
+str[r] = av[i][n];
+r++;
 }
-str[k] = ' '; /* add space after each argument */
-k++;
+if (str[r] == '\0')
+{
+str[r++] = '\n';
 }
-str[k] = '\0'; /* add terminating null byte */
+}
 return (str);
 }
