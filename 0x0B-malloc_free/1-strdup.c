@@ -5,16 +5,15 @@
  * Return: 1
  */
 
-int _strlen(char *s)
+int _strlen(char*s)
 {
-unsigned int 1;
+unsigned int i = 0;
 
-i = 0;
 while (s[i] != '\0') /*count character of string*/
 {
 i++;
 }
-return (i);
+return i;
 }
 
 /**
@@ -24,7 +23,7 @@ return (i);
  * Return: dest
  */
 
-char *_strcpy(char *dest, char *src)
+char *_strcpy(char*dest, char*src)
 {
 int i = 0;
 
@@ -45,14 +44,20 @@ return (dest);
  * Return: pointer
  */
 
-char *_strdup(char *str)
+char *_strdup(char*str)
 {
 char *dst;
-unsigned int size;
+int len;
 
 if (str == 0)
 {
 return (NULL);
+}
+len = _strlen(str);
+dst = malloc(sizeof(char) * (len + 1));
+if (dst == NULL)
+{
+return(NULL);
 }
 _strcpy(dst, str);
 return (dst);
