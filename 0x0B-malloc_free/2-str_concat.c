@@ -33,7 +33,7 @@ s2 = "";
 /* calculate total size */
 size = (_strlen(s1) + _strlen(s2) + 1);
 /* allocate memory */
-dst = (char *) malloc(size * sizeof(char));
+dst = (char *) malloc(size *sizeof(char));
 if (dst == NULL)
 {
 return (NULL);
