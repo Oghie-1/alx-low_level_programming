@@ -33,7 +33,7 @@ return (dest);
 /**
  * _strdup - duplicates a string
  * @str: string to be duplicated
- * Return: pointer to the newly allocated memory containing the duplicate string
+ * Return: pointer to newstr
  */
 char *_strdup(char *str)
 {
