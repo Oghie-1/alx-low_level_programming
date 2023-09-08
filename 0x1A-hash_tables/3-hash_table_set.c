@@ -79,10 +79,12 @@ return new_node;
  */
 int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 {
+unsigned long int index;
+
 if (!ht || !key || !value || strcmp(key, "") == 0)
 return 0;
 
-unsigned long int index = key_index((unsigned char *)key, ht->size);
+index = key_index((unsigned char *)key, ht->size);
 
 if (check_key(ht->array[index], key))
 {
