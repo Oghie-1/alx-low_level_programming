@@ -7,13 +7,15 @@
  */
 void hash_table_print(const hash_table_t *ht)
 {
+int first_entry;
+unsigned long int i;
 if (!ht)
 return;
 
-int first_entry = 1;  /* Flag to track the first entry */
+first_entry = 1;  /* Flag to track the first entry */
 printf("{");
 
-for (unsigned long int i = 0; i < ht->size; i++)
+for (i = 0; i < ht->size; i++)
 {
 hash_node_t *node = ht->array[i];
         
