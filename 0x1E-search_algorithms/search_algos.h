@@ -1,4 +1,4 @@
-fndef _SORTING_ALGOS_H_
+#ifndef _SORTING_ALGOS_H_
 #define _SORTING_ALGOS_H_
 
 #include <stdlib.h>
@@ -39,7 +39,7 @@ typedef struct skiplist_s
 	struct skiplist_s *next;
 	struct skiplist_s *express;
 } skiplist_t;
-
+int main(void);
 int linear_search(int *array, size_t size, int value);
 int binary_search(int *array, size_t size, int value);
 int jump_search(int *array, size_t size, int value);
